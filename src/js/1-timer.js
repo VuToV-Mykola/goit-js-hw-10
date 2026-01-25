@@ -25,7 +25,6 @@ if (startButton) {
   startButton.disabled = true;
 }
 
-// Допоміжне форматування значень таймера (тільки для hours, minutes, seconds)
 const addLeadingZero = (value) => String(value).padStart(2, '0');
 
 const convertMs = (ms) => {
@@ -49,8 +48,7 @@ const convertMs = (ms) => {
 
 const updateTimerDisplay = ({ days, hours, minutes, seconds }) => {
   if (timerDays) {
-    // Дні можуть мати більше двох цифр, тому не форматуємо
-    timerDays.textContent = String(days);
+    timerDays.textContent = addLeadingZero(days);
   }
   if (timerHours) {
     timerHours.textContent = addLeadingZero(hours);
@@ -115,6 +113,7 @@ if (dateTimePicker) {
     time_24hr: true,
     defaultDate: new Date(),
     minuteIncrement: 1,
+    onChange: handleDateSelection,
     onClose: handleDateSelection,
   });
 }
