@@ -15,53 +15,35 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- Українською: Підключення CSS стилів / English: CSS stylesheet link -->
     <!--!!! TITLE !!!-->
-    <title>Gallery</title>
+    <title>Homework 10</title>
     <!-- Українською: Заголовок сторінки (вкладка браузера) / English: Page title (browser tab) -->
   </head>
   <!--!!! BODY !!!-->
   <body class="page page-home">
-    <!-- Українською: Шаблон верхньої частини сторінки (header) / English: Page header template -->
-<header class="header">
-  <!-- Українською: Верхня частина сторінки з навігацією / English: Top section with navigation -->
-  <div class="container">
-    <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
-    <!--!!! NAVIGATION !!!-->
-    <nav class="nav">
-      <!-- Українською: Навігаційна панель / English: Navigation bar -->
-      <!--!!! LOGO !!!-->
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <!-- Українською: Посилання на головну сторінку з логотипом / English: Home page link with logo -->
-        <svg class="nav-logo-icon" width="100" height="30">
-          <!-- Українською: SVG іконка логотипу / English: SVG logo icon -->
-          <use href="{=$icon-path}"></use>
-          <!-- Українською: Використання SVG спрайту (шлях передається через параметр) / English: SVG sprite usage (path passed via parameter) -->
-        </svg>
-      </a>
-      <!--!!! NAVIGATION LIST !!!-->
-      <ul class="nav-list">
-        <!-- Українською: Список навігаційних посилань / English: Navigation links list -->
-        <li class="nav-item">
-          <!-- Українською: Елемент навігації для Gallery / English: Navigation item for Gallery -->
-          <a class="nav-link {=$highlight-curr}" href="./1-gallery.html">Gallery</a>
-          <!-- Українською: Посилання на сторінку галереї з динамічним класом підсвітки / English: Gallery page link with dynamic highlight class -->
-        </li>
-        <li class="nav-item">
-          <!-- Українською: Елемент навігації для Form / English: Navigation item for Form -->
-          <a class="nav-link {=$highlight-act}" href="./2-form.html">Form</a>
-          <!-- Українською: Посилання на сторінку форми з динамічним класом підсвітки / English: Form page link with dynamic highlight class -->
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <header class="page-header">
+      <!-- Українською: Верхня частина сторінки (лого, навігація) / English: Top section (logo, navigation) -->
+      <load
+        src="./partials/header.html"
+        icon-path="./img/sprite.svg#logo"
+        highlight-curr=""
+        highlight-act="" />
+    </header>
     <!--!!! MAIN !!!-->
     <main class="page-main">
       <!-- Українською: Основний вміст сторінки / English: Main page content -->
       <div class="container">
         <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to Gallery
+          <span class="main-title-gradient">Welcome</span> to Homework 10
         </h1>
-        <ul class="gallery"></ul>
+        <p class="main-subtitle">Timer & Snackbar</p>
+        <ul class="task-list">
+          <li class="task-item">
+            <a class="task-link" href="./1-timer.html">Open Timer</a>
+          </li>
+          <li class="task-item">
+            <a class="task-link" href="./2-snackbar.html">Open Snackbar</a>
+          </li>
+        </ul>
       </div>
     </main>
     <!--!!! footer !!!-->
@@ -69,6 +51,6 @@
       <!-- Українською: Нижня частина сторінки (копірайт, посилання) / English: Bottom section (copyright, links) -->
       <load src="./partials/footer.html" />
     </footer>
-    <script type="module" src="./js/1-gallery.js"></script>
+    <script type="module" src="./js/1-timer.js"></script>
   </body>
 </html>

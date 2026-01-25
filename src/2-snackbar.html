@@ -10,14 +10,14 @@
     <!-- Українською: Забезпечує сумісність з Internet Explorer / English: Ensures compatibility with Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Українською: Налаштування адаптивного дизайну / English: Responsive design settings -->
-    <title>Gallery</title>
+    <title>Snackbar</title>
     <!-- Українською: Заголовок сторінки (вкладка браузера) / English: Page title (browser tab) -->
     <!--!!! STYLES !!!-->
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- Українською: Підключення CSS стилів / English: CSS stylesheet link -->
   </head>
   <!--!!! BODY !!!-->
-  <body class="page page-gallery">
+  <body class="page page-snackbar">
     <!-- Українською: Основний контейнер сторінки / English: Main page container -->
     <!--!!! HEADER !!!-->
     <header class="page-header">
@@ -25,9 +25,9 @@
       <load
         src="./partials/header.html"
         icon-path="./img/sprite.svg#logo"
-        highlight-curr="active"
-        highlight-act="" />
-      <!-- Українською: Підключення шаблону header з підсвіткою Gallery / English: Header template with Gallery highlight -->
+        highlight-curr=""
+        highlight-act="active" />
+      <!-- Українською: Підключення шаблону header з підсвіткою Snackbar / English: Header template with Snackbar highlight -->
     </header>
     <!--!!! MAIN !!!-->
     <main class="page-main">
@@ -36,12 +36,29 @@
         <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
         <h1 class="main-title">
           <!-- Українською: Головний заголовок сторінки / English: Main page heading -->
-          <span class="main-title-gradient">Welcome</span> to Gallery
+          <span class="main-title-gradient">Welcome</span> to Snackbar
         </h1>
         <load src="./partials/back-link.html" />
         <!-- Українською: Посилання для повернення на головну сторінку / English: Back link to home page -->
-        <ul class="gallery"></ul>
-        <!-- Українською: Контейнер для галереї зображень (заповнюється через JavaScript) / English: Gallery container (populated via JavaScript) -->
+        <form class="form" autocomplete="off">
+          <!-- Українською: Форма для створення повідомлення / English: Notification form -->
+          <label>
+            Delay (ms)
+            <input type="number" name="delay" min="0" required />
+          </label>
+          <fieldset class="form-fieldset">
+            <legend>State</legend>
+            <label class="form-radio">
+              <input type="radio" name="state" value="fulfilled" required />
+              Fulfilled
+            </label>
+            <label class="form-radio">
+              <input type="radio" name="state" value="rejected" required />
+              Rejected
+            </label>
+          </fieldset>
+          <button class="form-btn" type="submit">Create notification</button>
+        </form>
       </div>
     </main>
     <!--!!! FOOTER !!!-->
@@ -51,7 +68,7 @@
       <!-- Українською: Підключення шаблону footer / English: Footer template -->
     </footer>
     <!--!!! SCRIPT !!!-->
-    <script type="module" src="./js/1-gallery.js"></script>
-    <!-- Українською: Підключення JavaScript модуля для функціональності галереї / English: JavaScript module for gallery functionality -->
+    <script type="module" src="./js/2-snackbar.js"></script>
+    <!-- Українською: Підключення JavaScript модуля для функціональності snackbar / English: JavaScript module for snackbar functionality -->
   </body>
 </html>

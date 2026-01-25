@@ -3,30 +3,33 @@
 [🇺🇦 Українська](README.md) | [🇬🇧 English](README.en.md) |
 [🇩🇪 Deutsch](README.de.md)
 
-# GoIT JS HW-09 — Галерея та форма зворотного звʼязку
+# GoIT JS HW-10 — Таймер та Snackbar
 
 <!-- AUTOGEN:STATS -->
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![Terminal](https://img.shields.io/badge/mac%20terminal-000000?style=for-the-badge&logo=apple&logoColor=white&labelColor=000000)](https://support.apple.com/guide/terminal/welcome/mac) [![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/) [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/) [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/) 
 
-[![📊 Views](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/goit-js-hw-10/main/assets/db/visitors-badge.json)](https://github.com/VuToV-Mykola/goit-js-hw-10/graphs/traffic)
-[![⭐ Stars](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/goit-js-hw-10/main/assets/db/likes-badge.json)](https://github.com/VuToV-Mykola/goit-js-hw-10/actions/workflows/screenshot-and-visitor.yaml)
-[![📦 Size](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/goit-js-hw-10/main/assets/db/repo-size.json)](https://github.com/VuToV-Mykola/goit-js-hw-10)
-[![📄 License](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/goit-js-hw-10/main/assets/db/repo-license.json)](https://github.com/VuToV-Mykola/goit-js-hw-10/blob/main/LICENSE)
+[![📊 Views](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/project-new-generation-25/main/assets/db/visitors-badge.json)](https://github.com/VuToV-Mykola/project-new-generation-25/graphs/traffic)
+[![⭐ Stars](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/project-new-generation-25/main/assets/db/likes-badge.json)](https://github.com/VuToV-Mykola/project-new-generation-25/actions/workflows/screenshot-and-visitor.yaml)
+[![📦 Size](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/project-new-generation-25/main/assets/db/repo-size.json)](https://github.com/VuToV-Mykola/project-new-generation-25)
+[![📄 License](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/VuToV-Mykola/project-new-generation-25/main/assets/db/repo-license.json)](https://github.com/VuToV-Mykola/project-new-generation-25/blob/main/LICENSE)
+
+## 📸 Скріншот проекту
+![Project Screenshot](./assets/screenshot.png)
 <!-- END:AUTOGEN -->
 
 ## 🎯 Про проєкт
 
-Це домашнє завдання №9 з JavaScript. Реалізовано:
-- динамічну галерею з інтеграцією `SimpleLightbox`;
-- форму фідбеку з автозбереженням у `localStorage` та throttling.
+Це домашнє завдання №10 з JavaScript. Реалізовано:
+- таймер з вибором дати та часу через `flatpickr`;
+- snackbar-сповіщення для промісів через `iziToast`.
 
 ## 🧩 Функціонал
 
-- Рендеринг галереї з масиву зображень.
-- Лайтбокс із підписами, затримкою та навігацією.
-- Збереження стану форми під час введення.
-- Відновлення значень після перезавантаження.
-- Валідація заповнення перед сабмітом.
+- Валідація дати: старт лише для майбутніх значень.
+- Запуск таймера з блокуванням інпута.
+- Форматування часу у двозначному вигляді.
+- Створення промісу із затримкою та відображення результату.
+- Нотифікації про успішні та відхилені проміси.
 
 ## 🛠 Технології
 
@@ -34,63 +37,67 @@
 - CSS3
 - JavaScript (ES2025)
 - Vite
-- SimpleLightbox
-- lodash.throttle
+- flatpickr
+- iziToast
 
-## 🔌 Підключення SimpleLightbox
+## 🔌 Підключення flatpickr
 
 1. Встановити залежність:
 ```bash
-npm install simplelightbox
+npm install flatpickr
 ```
 
 2. Імпортувати бібліотеку та стилі:
 ```js
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 ```
 
-3. Ініціалізувати лайтбокс для посилань галереї:
+3. Ініціалізувати пікер:
 ```js
-new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
+flatpickr('#datetime-picker', {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
 });
 ```
 
-## 🔌 Підключення lodash.throttle
+## 🔌 Підключення iziToast
 
 1. Встановити залежність:
 ```bash
-npm install lodash.throttle
+npm install izitoast
 ```
 
-2. Імпортувати функцію:
+2. Імпортувати бібліотеку та стилі:
 ```js
-import throttle from 'lodash.throttle';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 ```
 
-3. Використати для збереження стану форми:
+3. Використати для нотифікацій:
 ```js
-const persistFormState = throttle(() => {
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
-}, 500);
+iziToast.success({
+  title: 'OK',
+  message: 'Fulfilled promise in 500ms',
+});
 ```
 
 ## 📁 Структура
 
 ```
-goit-js-hw-09/
+goit-js-hw-10/
 ├── src/
-│   ├── 1-gallery.html
-│   ├── 2-form.html
+│   ├── 1-timer.html
+│   ├── 2-snackbar.html
 │   ├── css/
-│   │   ├── gallery.css
-│   │   ├── form.css
+│   │   ├── timer.css
+│   │   ├── snackbar.css
 │   │   └── styles.css
 │   └── js/
-│       ├── 1-gallery.js
-│       └── 2-form.js
+│       ├── 1-timer.js
+│       └── 2-snackbar.js
 ├── package.json
 └── README.md
 ```
@@ -108,8 +115,8 @@ npm run dev
 ```
 
 3. Відкрити сторінки:
-- `http://localhost:5173/1-gallery.html`
-- `http://localhost:5173/2-form.html`
+- `http://localhost:5173/1-timer.html`
+- `http://localhost:5173/2-snackbar.html`
 
 ## ✅ Валідація
 
@@ -119,103 +126,34 @@ npm run dev
 
 ## 🔗 Корисні посилання
 
-- [Технічне завдання](https://www.edu.goit.global/ru/learn/35708569/18936918/20332333/homework)
-- [Макет у Figma](https://www.figma.com/file/m8k9NQV7qZrtYDCvxfD68B/ДЗ-JavaScript?type=design&node-id=3-969&mode=design)
+- [Технічне завдання](https://www.edu.goit.global/ru/learn/35708569/18936918/20351639/homework)
 - [Stylelint Rules](https://stylelint.io/user-guide/rules)
 - [Code Guide](https://codeguide.co/)
 
 ## 📐 ТЗ
 
-### Завдання 1 - Галерея зображень
+### Завдання 1 - Таймер
 
-Виконуй це завдання у файлах `1-gallery.html` і `1-gallery.js`.
-У попередньому домашньому завданні ти самостійно створив/-ла галерею зображень, використовуючи делегування подій, і додав/-ла через CDN бібліотеку модальне вікно для відображення повнорозмірної версії зображення.
+Виконуй це завдання у файлах `1-timer.html` і `1-timer.js`.
+Створи таймер з можливістю вибору дати та часу через `flatpickr`.
 
-Створення галерей — це повсякденна задача розробника, але писати їх вручну кожного разу занадто трудомістко. Для цього існують бібліотеки, які реалізують усю логіку роботи галереї.
+Основні вимоги:
+- Інпут має id `datetime-picker`, а кнопка старту — атрибут `data-start`.
+- Кнопка старту неактивна, поки не вибрано майбутню дату.
+- Якщо обрана дата в минулому, показуй `iziToast` з повідомленням про помилку.
+- Після старту таймера інпут і кнопка блокуються.
+- Значення часу оновлюються кожну секунду у полях `data-days`, `data-hours`, `data-minutes`, `data-seconds`.
+- Значення форматуються до двох цифр.
 
-Зроби таку саму галерею, але використовуючи бібліотеку SimpleLightbox, яка повністю візьме на себе обробку кліків по зображеннях, відкриття і закриття модального вікна, а також гортання зображень за допомогою клавіатури.
+### Завдання 2 - Snackbar
 
-Подивися демовідео роботи галереї.
+Виконуй це завдання у файлах `2-snackbar.html` і `2-snackbar.js`.
+Створи форму для запуску промісу із затримкою та виведенням результату.
 
-Зверни увагу на такі деталі:
-- Тобі більше не потрібно вручну встановлювати делегування подій, оскільки бібліотека SimpleLightbox автоматично відстежує кліки по картках галереї.
-- Окрема бібліотека BasicLightbox для створення модальних вікон більше не потрібна, оскільки функціонал відкриття модального вікна вбудовано в бібліотеку SimpleLightbox.
-- Для встановлення бібліотек тепер не потрібно додавати CDN-посилання в `index.html`. Замість цього ми встановлюємо бібліотеки через npm в терміналі.
-
-Виконуй це завдання у файлах `1-gallery.html` і `1-gallery.js`. Розбий його на декілька підзавдань:
-
-- Використовуй код з минулого домашнього завдання та виконай його рефакторинг. Не потрібно писати все з нуля. Наприклад, створення елементів галереї буде таким самим, а код делегування та відкриття модального вікна потрібно видалити.
-- Необхідно трохи змінити розмітку картки галереї, використовуй цей шаблон.
-
-```html
-<li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
-    <img
-      class="gallery-image"
-      src="small-image.jpg"
-      alt="Image description"
-    />
-  </a>
-</li>
-```
-
-Додай бібліотеку SimpleLightbox як залежність проєкту, використовуючи npm.
-Для того щоб підключити CSS код бібліотеки в проєкт, необхідно додати ще один імпорт, крім того, що описаний у документації.
-
-```js
-// Описаний в документації
-import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
-import 'simplelightbox/dist/simple-lightbox.min.css';
-```
-
-Наступний крок — ініціалізація бібліотеки після створення і додання елементів галереї у `ul.gallery`. Для цього ознайомся з документацією SimpleLightbox — насамперед секції «Usage» і «Markup».
-
-Після цього подивись у документації секцію «Options» і додай відображення підписів до зображень з атрибута `alt`. Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття модального вікна.
-
-На що буде звертати увагу ментор при перевірці:
-- На живій сторінці відображається галерея зображень із масиву даних `images`
-- Галерея зображень стилізована згідно з макетом
-- Дані для галереї створені динамічно в JS
-- Відсутні власні слухачі
-- Підключена бібліотека SimpleLightbox з використанням npm
-- Екземпляр бібліотеки ініціалізований після додавання елементів галереї у DOM і поза межами будь-яких функцій
-- При кліку по елементу галереї відкривається модальне вікно підключеної бібліотеки, в якому міститься збільшена версія зображення
-- Через 250 мілісекунд після відкривання модального вікна вміст атрибута `alt` з’являється знизу, як підпис до зображення
-
-### Завдання 2 - Форма зворотного зв'язку
-
-Виконуй це завдання у файлах `2-form.html` і `2-form.js`.
-Додай у HTML розмітку форми. У JS напиши скрипт, який буде зберігати значення полів у локальне сховище, коли користувач щось друкує.
-
-```html
-<form class="feedback-form" autocomplete="off">
-  <label>
-    Email
-    <input type="email" name="email" autofocus />
-  </label>
-  <label>
-    Message
-    <textarea name="message" rows="8"></textarea>
-  </label>
-  <button type="submit">Submit</button>
-</form>
-```
-
-Виконуй це завдання у файлах `2-form.html` і `2-form.js`. Розбий його на декілька підзавдань:
-- Оголоси поза будь-якими функціями об’єкт `formData` з полями `email` та `message`, які спочатку мають порожні рядки як значення: `{ email: "", message: "" }`.
-- Використовуй метод делегування для відстеження змін у формі через подію `input`. Зберігай актуальні дані з полів `email` та `message` у `formData` та записуй цей об’єкт у локальне сховище. Використовуй ключ `"feedback-form-state"` для зберігання даних у сховищі.
-- При завантаженні сторінки перевір, чи є дані у локальному сховищі. Якщо так, використовуй їх для заповнення форми та об'єкта `formData`. Якщо ні, залиш поля форми порожніми.
-- Перед відправленням форми переконайся, що обидва поля форми заповнені. Якщо будь-яке з полів (властивостей об’єкта `formData`) порожнє, показуй сповіщення з текстом `Fill please all fields`. Якщо всі поля заповнені, виведи у консоль об’єкт `formData` з актуальними значеннями, очисти локальне сховище, об’єкт `formData` і поля форми.
-
-На що буде звертати увагу ментор при перевірці:
-- На живій сторінці відображається форма з двома елементами форми і кнопкою типу submit
-- Форма стилізована згідно з макетом
-- На формі прослуховуються події `input` і `submit`
-- При введенні даних у будь-який елемент форми вони записуються у локальне сховище під ключем `"feedback-form-state"`, збережені дані не містять пробіли по краях
-- Введення даних в одне поле форми не видаляє дані в сховищі для іншого
-- При оновленні сторінки дані з локального сховища підставляються в елементи форми, у полях форми відсутні `undefined`
-- При сабміті форми є перевірка, щоб обидва елементи форми були заповнені
-- Під час сабміту форми, якщо обидва елементи форми заповнені, виводиться у консоль об'єкт з полями `email`, `message` та їхніми поточними значеннями, а також очищаються сховище і поля форми
-- Якщо після сабміту форми ввести в будь-який елемент форми дані, то в локальному сховищі не з’являються дані від попереднього сабміта
+Основні вимоги:
+- Поле `delay` приймає затримку в мілісекундах.
+- Радіокнопки `state` визначають, чи проміс виконається (`fulfilled`) або відхилиться (`rejected`).
+- Після сабміту створюється проміс і через `iziToast` показується результат:
+  - `Fulfilled promise in Xms`
+  - `Rejected promise in Xms`
 
