@@ -23,6 +23,7 @@ let timerId = null;
 
 if (startButton) {
   startButton.disabled = true;
+  startButton.classList.remove('start-btn-abled');
 }
 
 const addLeadingZero = (value) => String(value).padStart(2, '0');
@@ -67,6 +68,11 @@ const toggleControls = (isRunning) => {
   }
   if (startButton) {
     startButton.disabled = isRunning;
+    if (isRunning) {
+      startButton.classList.remove('start-btn-abled');
+    } else {
+      startButton.classList.add('start-btn-abled');
+    }
   }
 };
 
@@ -80,10 +86,11 @@ const showErrorToast = (message) => {
 };
 
 const handleDateSelection = (selectedDates) => {
-  if (!selectedDates.length) {
+  if (!selectedDates || !selectedDates.length) {
     selectedDate = null;
     if (startButton) {
       startButton.disabled = true;
+      startButton.classList.remove('start-btn-abled');
     }
     return;
   }
@@ -95,6 +102,7 @@ const handleDateSelection = (selectedDates) => {
     selectedDate = null;
     if (startButton) {
       startButton.disabled = true;
+      startButton.classList.remove('start-btn-abled');
     }
     showErrorToast('Please choose a date in the future');
     return;
@@ -103,18 +111,22 @@ const handleDateSelection = (selectedDates) => {
   selectedDate = pickedDate;
   if (startButton) {
     startButton.disabled = false;
+    startButton.classList.add('start-btn-abled');
   }
 };
 
 // Ініціалізація Flatpickr з потрібними опціями
 if (dateTimePicker) {
-  flatpickr(dateTimePicker, {
+  const fp = flatpickr(dateTimePicker, {
     enableTime: true,
     time_24hr: true,
-    defaultDate: new Date(),
     minuteIncrement: 1,
     onChange: handleDateSelection,
     onClose: handleDateSelection,
+  });
+
+  dateTimePicker.addEventListener('change', () => {
+    handleDateSelection(fp.selectedDates);
   });
 }
 
@@ -139,6 +151,7 @@ const startTimer = () => {
       selectedDate = null;
       if (startButton) {
         startButton.disabled = true;
+        startButton.classList.remove('start-btn-abled');
       }
       if (dateTimePicker) {
         dateTimePicker.disabled = false;
