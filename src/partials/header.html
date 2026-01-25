@@ -1,0 +1,34 @@
+<!-- Українською: Шаблон верхньої частини сторінки (header) / English: Page header template -->
+<header class="header">
+  <!-- Українською: Верхня частина сторінки з навігацією / English: Top section with navigation -->
+  <div class="container">
+    <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
+    <!--!!! NAVIGATION !!!-->
+    <nav class="nav">
+      <!-- Українською: Навігаційна панель / English: Navigation bar -->
+      <!--!!! LOGO !!!-->
+      <a class="nav-logo" href="./index.html" aria-label="Site logo">
+        <!-- Українською: Посилання на головну сторінку з логотипом / English: Home page link with logo -->
+        <svg class="nav-logo-icon" width="100" height="30">
+          <!-- Українською: SVG іконка логотипу / English: SVG logo icon -->
+          <use href="{=$icon-path}"></use>
+          <!-- Українською: Використання SVG спрайту (шлях передається через параметр) / English: SVG sprite usage (path passed via parameter) -->
+        </svg>
+      </a>
+      <!--!!! NAVIGATION LIST !!!-->
+      <ul class="nav-list">
+        <!-- Українською: Список навігаційних посилань / English: Navigation links list -->
+        <li class="nav-item">
+          <!-- Українською: Елемент навігації для Gallery / English: Navigation item for Gallery -->
+          <a class="nav-link {=$highlight-curr}" href="./1-gallery.html">Gallery</a>
+          <!-- Українською: Посилання на сторінку галереї з динамічним класом підсвітки / English: Gallery page link with dynamic highlight class -->
+        </li>
+        <li class="nav-item">
+          <!-- Українською: Елемент навігації для Form / English: Navigation item for Form -->
+          <a class="nav-link {=$highlight-act}" href="./2-form.html">Form</a>
+          <!-- Українською: Посилання на сторінку форми з динамічним класом підсвітки / English: Form page link with dynamic highlight class -->
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
