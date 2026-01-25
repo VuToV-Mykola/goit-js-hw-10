@@ -20,14 +20,39 @@
   <body class="page page-snackbar">
     <!-- Українською: Основний контейнер сторінки / English: Main page container -->
     <!--!!! HEADER !!!-->
-    <header class="page-header">
-      <!-- Українською: Верхня частина сторінки (лого, навігація) / English: Top section (logo, navigation) -->
-      <load
-        src="./partials/header.html"
-        icon-path="./img/sprite.svg#logo"
-        highlight-curr=""
-        highlight-act="active" />
-      <!-- Українською: Підключення шаблону header з підсвіткою Snackbar / English: Header template with Snackbar highlight -->
+    <!-- Українською: Шаблон верхньої частини сторінки (header) / English: Page header template -->
+    <header class="header">
+      <!-- Українською: Верхня частина сторінки з навігацією / English: Top section with navigation -->
+      <div class="container">
+        <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
+        <!--!!! NAVIGATION !!!-->
+        <nav class="nav">
+          <!-- Українською: Навігаційна панель / English: Navigation bar -->
+          <!--!!! LOGO !!!-->
+          <a class="nav-logo" href="./index.html" aria-label="Site logo">
+            <!-- Українською: Посилання на головну сторінку з логотипом / English: Home page link with logo -->
+            <svg class="nav-logo-icon" width="100" height="30">
+              <!-- Українською: SVG іконка логотипу / English: SVG logo icon -->
+              <use href="./img/sprite.svg#logo"></use>
+              <!-- Українською: Використання SVG спрайту / English: SVG sprite usage -->
+            </svg>
+          </a>
+          <!--!!! NAVIGATION LIST !!!-->
+          <ul class="nav-list">
+            <!-- Українською: Список навігаційних посилань / English: Navigation links list -->
+            <li class="nav-item">
+              <!-- Українською: Елемент навігації для Timer / English: Navigation item for Timer -->
+              <a class="nav-link" href="./1-timer.html">Timer</a>
+              <!-- Українською: Посилання на сторінку таймера / English: Timer page link -->
+            </li>
+            <li class="nav-item">
+              <!-- Українською: Елемент навігації для Snackbar / English: Navigation item for Snackbar -->
+              <a class="nav-link active" href="./2-snackbar.html">Snackbar</a>
+              <!-- Українською: Посилання на сторінку сповіщень з підсвіткою / English: Snackbar page link with highlight -->
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <!--!!! MAIN !!!-->
     <main class="page-main">
