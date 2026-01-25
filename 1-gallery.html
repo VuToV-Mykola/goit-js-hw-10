@@ -1,0 +1,114 @@
+<!doctype html>
+<!-- Українською: Декларація типу документу HTML5 / English: HTML5 document type declaration -->
+<html lang="en">
+  <!-- Українською: Вказує мову сторінки (англійська) / English: Specifies page language (English) -->
+  <!--!!! HEAD !!!-->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Українською: Кодування символів (UTF-8 підтримує всі мови) / English: Character encoding (UTF-8 supports all languages) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Українською: Забезпечує сумісність з Internet Explorer / English: Ensures compatibility with Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Українською: Налаштування адаптивного дизайну / English: Responsive design settings -->
+    <title>Gallery</title>
+    <!-- Українською: Заголовок сторінки (вкладка браузера) / English: Page title (browser tab) -->
+    <!--!!! STYLES !!!-->
+    <!-- Українською: Підключення CSS стилів / English: CSS stylesheet link -->
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/styles-3CIH4smN.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-DCZfLYLJ.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/1-gallery-CzkF2tGl.js"></script>
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/styles-B6jH6ds8.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/vendor-DeCW6AA4.css">
+  </head>
+  <!--!!! BODY !!!-->
+  <body class="page page-gallery">
+    <!-- Українською: Основний контейнер сторінки / English: Main page container -->
+    <!--!!! HEADER !!!-->
+    <header class="page-header">
+      <!-- Українською: Верхня частина сторінки (лого, навігація) / English: Top section (logo, navigation) -->
+      <!-- Українською: Шаблон верхньої частини сторінки (header) / English: Page header template -->
+<header class="header">
+  <!-- Українською: Верхня частина сторінки з навігацією / English: Top section with navigation -->
+  <div class="container">
+    <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
+    <!--!!! NAVIGATION !!!-->
+    <nav class="nav">
+      <!-- Українською: Навігаційна панель / English: Navigation bar -->
+      <!--!!! LOGO !!!-->
+      <a class="nav-logo" href="./index.html" aria-label="Site logo">
+        <!-- Українською: Посилання на головну сторінку з логотипом / English: Home page link with logo -->
+        <svg class="nav-logo-icon" width="100" height="30">
+          <!-- Українською: SVG іконка логотипу / English: SVG logo icon -->
+          <use href="/goit-js-hw-09/assets/sprite-E8vg0sBb.svg#logo"></use>
+          <!-- Українською: Використання SVG спрайту (шлях передається через параметр) / English: SVG sprite usage (path passed via parameter) -->
+        </svg>
+      </a>
+      <!--!!! NAVIGATION LIST !!!-->
+      <ul class="nav-list">
+        <!-- Українською: Список навігаційних посилань / English: Navigation links list -->
+        <li class="nav-item">
+          <!-- Українською: Елемент навігації для Gallery / English: Navigation item for Gallery -->
+          <a class="nav-link active" href="./1-gallery.html">Gallery</a>
+          <!-- Українською: Посилання на сторінку галереї з динамічним класом підсвітки / English: Gallery page link with dynamic highlight class -->
+        </li>
+        <li class="nav-item">
+          <!-- Українською: Елемент навігації для Form / English: Navigation item for Form -->
+          <a class="nav-link " href="./2-form.html">Form</a>
+          <!-- Українською: Посилання на сторінку форми з динамічним класом підсвітки / English: Form page link with dynamic highlight class -->
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      <!-- Українською: Підключення шаблону header з підсвіткою Gallery / English: Header template with Gallery highlight -->
+    </header>
+    <!--!!! MAIN !!!-->
+    <main class="page-main">
+      <!-- Українською: Основний вміст сторінки / English: Main page content -->
+      <div class="container">
+        <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
+        <h1 class="main-title">
+          <!-- Українською: Головний заголовок сторінки / English: Main page heading -->
+          <span class="main-title-gradient">Welcome</span> to Gallery
+        </h1>
+        <!-- Українською: Шаблон посилання для повернення на головну сторінку / English: Back to home page link template -->
+<!--!!! BACK LINK !!!-->
+<a class="back-link" href="./index.html">Go back</a>
+<!-- Українською: Посилання для навігації назад на головну сторінку / English: Navigation link back to home page -->
+
+        <!-- Українською: Посилання для повернення на головну сторінку / English: Back link to home page -->
+        <ul class="gallery"></ul>
+        <!-- Українською: Контейнер для галереї зображень (заповнюється через JavaScript) / English: Gallery container (populated via JavaScript) -->
+      </div>
+    </main>
+    <!--!!! FOOTER !!!-->
+    <footer class="page-footer">
+      <!-- Українською: Нижня частина сторінки (копірайт, посилання) / English: Bottom section (copyright, links) -->
+      <!-- Українською: Шаблон нижньої частини сторінки (footer) / English: Page footer template -->
+<footer class="footer">
+  <!-- Українською: Нижня частина сторінки з інформацією про авторів / English: Bottom section with author information -->
+  <div class="container">
+    <!-- Українською: Контейнер для обмеження ширини контенту / English: Container for content width limitation -->
+    <!--!!! FOOTER CONTENT !!!-->
+    <p class="footer-desc">
+      <!-- Українською: Описовий текст футера / English: Footer description text -->
+      Made with ✨ by
+      <a
+        class="footer-link"
+        href="https://goit.global/ua/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <!-- Українською: Посилання на сайт GoIT з безпечними атрибутами для відкриття в новій вкладці / English: GoIT website link with safe attributes for opening in new tab -->
+        GoIT team
+      </a>
+    </p>
+  </div>
+</footer>
+
+      <!-- Українською: Підключення шаблону footer / English: Footer template -->
+    </footer>
+    <!--!!! SCRIPT !!!-->
+    <!-- Українською: Підключення JavaScript модуля для функціональності галереї / English: JavaScript module for gallery functionality -->
+  </body>
+</html>
