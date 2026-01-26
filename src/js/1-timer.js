@@ -121,6 +121,7 @@ if (dateTimePicker) {
     enableTime: true,
     time_24hr: true,
     minuteIncrement: 1,
+    defaultDate: new Date(),
     onChange: handleDateSelection,
     onClose: handleDateSelection,
   });
